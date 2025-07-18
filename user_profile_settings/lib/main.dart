@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,6 +22,7 @@ class ProfileSettingsForm extends StatefulWidget {
 
 class _ProfileSettingsFormState extends State<ProfileSettingsForm> {
   String _username = '';
+  String _password = '';
   bool _agreedToTerms = false;
   bool _notificationsEnabled = false;
   @override
@@ -42,6 +42,19 @@ class _ProfileSettingsFormState extends State<ProfileSettingsForm> {
             onChanged: (value) {
               setState(() {
                 _username = value;
+              });
+            },
+          ),
+          SizedBox(height: 10,),
+          TextField(
+            decoration: InputDecoration(
+              labelText: 'Password',
+              border: OutlineInputBorder(),
+            ),
+            obscureText: true,
+            onChanged: (value) {
+              setState(() {
+                _password = value;
               });
             },
           ),
